@@ -11,7 +11,7 @@ public class PlusOne3 {
 
         //int[] arr = {9, 3, 5, 7, 2 , 1};
         //int[] arr = {9, 9, 9, 9, 9 , 9};
-        int[] arr = {9, 9};
+        int[] arr = {9, 8};
         //int[] arr = {0};
 
         arr = plusOne(arr);
@@ -31,23 +31,30 @@ public class PlusOne3 {
 
     public static int[] plusOne(int[] digits) {
 
-        if (digits.length == 1 && digits[0] < 9){
-            digits[0] = ++digits[0];
+
+        int last = digits.length - 1;
+
+        // check if  last element less than 9, if so add 1 and return array
+        if (digits[last] < 9){
+            digits[last] = digits[last] + 1;
             return digits;
         }
 
+
+        //declare variable increment
         int increment = 0;
-        for (int i = digits.length - 1; i > -1; i--) {
-            if (i == digits.length - 1) {
+        for (int i = last; i > -1; i--) {
+            if (i == last) {
                 digits[i] = digits[i] + 1;
             }
+            
             digits[i] = digits[i] + increment;
             increment = 0;
             if (digits[i] > 9) {
                 increment++;
                 digits[i] = digits[i] % 10;
-                //System.out.println(digits[i]);
             }
+        }
 
             if (increment > 0) {
                 int[] moreDigits = new int[digits.length + 1];
@@ -57,11 +64,6 @@ public class PlusOne3 {
                 }
                 return moreDigits;
             }
-
-        }
-
-
-
 
         return digits;
     }
