@@ -14,7 +14,7 @@ public class Solution {
 
 
 
-    public static int LongestAbsoluteFilePath(String path)
+    private static int LongestAbsoluteFilePath(String path)
     {
         // convert path to array
         //String[] pathArr = path.split("\\\\");

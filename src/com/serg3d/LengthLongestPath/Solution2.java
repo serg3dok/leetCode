@@ -14,46 +14,12 @@ public class Solution2 {
 
 
 
-    public static int LongestAbsoluteFilePath(String path)
+    private static int LongestAbsoluteFilePath(String path)
     {
-        // convert path to array
-        //String[] pathArr = path.split("\\\\");
+        for (int i = 0; i < path.length(); i++) {
 
-        // l stands for longest path, result
-        int l = 0;
-
-        // counter for \t
-        int t = 0;
-
-        // max t
-        int maxT = 0;
-
-        // iterate through array and check every char
-
-        //for (int i = 1; i < pathArr.length; i++) {
-        int i = 0;
-        while(i < path.length()) {
-            t = 0;
-            // skip /n
-            if (path.charAt(i) == '\\' && path.charAt(i+1) == 'n') i += 2;
-
-            // count t
-            while(path.charAt(i) == '\\' && path.charAt(i+1) == '\\') {
-                t++;
-                i+=2;
-            }
-            // compare maxT and t
-            if (maxT < t) maxT = t;
-
-            // increment l
-            while (path.charAt(i) != '/') {
-                l++;
-                System.out.println(path.charAt(i));
-                if (i == path.length()-1) return l;
-                i++;
-            }
         }
 
-        return l;
+        return 1;
     }
 }
