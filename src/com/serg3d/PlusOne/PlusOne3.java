@@ -21,7 +21,6 @@ public class PlusOne3 {
         for (int d : arr ) {
             System.out.print(d + " ");
         }
-
     }
 
 
@@ -33,7 +32,6 @@ public class PlusOne3 {
 
     public static int[] plusOne(int[] digits) {
 
-
         int last = digits.length - 1;
 
         // check if  last element less than 9, if so add 1 and return array
@@ -41,8 +39,6 @@ public class PlusOne3 {
             digits[last] = digits[last] + 1;
             return digits;
         }
-
-
 
         //declare variable increment
         int increment = 0;
