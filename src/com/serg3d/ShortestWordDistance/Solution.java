@@ -6,9 +6,9 @@ package com.serg3d.ShortestWordDistance;
 public class Solution {
 
     public static void main(String[] args) {
-        String word1 = "b";
-        String word2 = "a";
-        String[] words = { "a", "b", "c"};
+        String word1 = "a";
+        String word2 = "b";
+        String[] words = { "a", "a", "b", "b"};
         System.out.println(shortestDistance(words, word1, word2));
 
     }
@@ -21,16 +21,19 @@ public class Solution {
         int i = 0;
 
         //if word1 is first
-        while (i < words.length) {
+        while (i < words.length-1) {
             if (words[i].equals(word1)) {
                 counter1 = 0;
                 while (!words[i].equals(word2) && i < words.length) {
-                    counter1++;
+
                     i++;
+                    if (words[i+1] == words[i]) continue;
+                    counter1++;
                 }
                 if (shortest > counter1) {
                     shortest = counter1;
                     counter1 = shortest;
+                    continue;
                 }
             }
 
@@ -38,12 +41,15 @@ public class Solution {
             else if (words[i].equals(word2)) {
                 counter2 = 0;
                 while (!words[i].equals(word1) && i < words.length) {
-                    counter2++;
+
                     i++;
+                    if (words[i+1] == words[i]) continue;
+                    counter2++;
                 }
                 if (shortest > counter2) {
                     shortest = counter2;
                     counter2 = shortest;
+                    continue;
                 }
             }
 
