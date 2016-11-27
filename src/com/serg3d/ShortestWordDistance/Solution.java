@@ -27,9 +27,12 @@ public class Solution {
                 while (!words[i].equals(word2) && i < words.length) {
 
                     i++;
-                    if (words[i+1] == words[i]) continue;
+                    if (words[i].equals(word1)) {
+                        counter1 = 0;
+                        continue;
+                    }
                     counter1++;
-                }
+                 }
                 if (shortest > counter1) {
                     shortest = counter1;
                     counter1 = shortest;
@@ -41,9 +44,11 @@ public class Solution {
             else if (words[i].equals(word2)) {
                 counter2 = 0;
                 while (!words[i].equals(word1) && i < words.length) {
+                    i++;                    if (word2.equals(words[i])) {
+                        counter2 = 0;
+                        continue;
+                    }
 
-                    i++;
-                    if (words[i+1] == words[i]) continue;
                     counter2++;
                 }
                 if (shortest > counter2) {
