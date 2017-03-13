@@ -44,7 +44,8 @@ public class Solution {
             else if (words[i].equals(word2)) {
                 counter2 = 0;
                 while (!words[i].equals(word1) && i < words.length) {
-                    i++;                    if (word2.equals(words[i])) {
+                    i++;
+                    if (word2.equals(words[i])) {
                         counter2 = 0;
                         continue;
                     }
